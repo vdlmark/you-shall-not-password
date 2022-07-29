@@ -192,7 +192,7 @@ Something about a lot of passwords leaked online
 
 ---
 
-### We are <b>sharing</b> our <b>secret</b>!
+### We are __sharing__ our __secret__!
 
 ---
 
@@ -224,7 +224,38 @@ Developer Advocate @ _iO_</br>
 
 ---
 
-## Passwordless?
+> ![fido-alliance](/assets/fido-alliance.png)
+
+--
+
+#### FIDO Alliance
+> - Standards to reduce passwords<!-- .element: class="fragment fade-in-then-semi-out" -->
+> - Google, Mirosoft, Apple and Mozilla<!-- .element: class="fragment fade-in-then-semi-out" -->
+> - Passwordless authentication!<!-- .element: class="fragment fade-in" -->
+
+![yubi-key](/assets/yubi-key.png)<!-- .element: class="fragment fade-in" -->
+
+---
+
+<img src="assets/webauthentication.svg" alt="webauthentication" style="width:250px;"/>
+
+><img src="assets/edge.png" alt="edge" style="width:80px;"/>
+  <br />Browser Support
+<!-- .element: class="fragment fade-in" -->
+
+><img src="assets/key-pair.svg" alt="key-pair" style="width:125px;"/> 
+<br />Public Key Cryptography
+<!-- .element: class="fragment fade-in" -->
+
+--
+
+Platform Authenticators
+> ![platform-authenticators](/assets/platform-authenticators.svg)
+
+--
+
+Roaming Authenticators
+> ![roaming-authenticators](/assets/roaming-authenticators.svg)
 
 ---
 
