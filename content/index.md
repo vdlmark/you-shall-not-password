@@ -259,4 +259,15 @@ Roaming Authenticators
 
 ---
 
+## DEMO
+
+--
+
+<iframe style="width:100%; height:400px;" data-src="https://localhost/auth/realms/passwordless/account/" data-preload></iframe>
+<io-webcam-view style="display: inline-block; width: 400px;" width="720" height="400" deviceid="ea1ea8ff3fdf07a6c05e83888d6f0a683e9aa7f4ef2eb9a41f6f58b3c4e20903">
+  <h1>Vite + Lit</h1>
+</io-webcam-view>
+
+---
+
 ## Thank you

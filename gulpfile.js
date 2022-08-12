@@ -267,6 +267,7 @@ gulp.task('package', gulp.series(() =>
     gulp.src(
         [
             './index.html',
+            './content/**',
             './dist/**',
             './lib/**',
             './images/**',
