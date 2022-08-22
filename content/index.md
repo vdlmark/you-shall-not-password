@@ -19,81 +19,86 @@
 ---
 
 ![user](/assets/user.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 > Welcome123
 <!-- .element: class="fragment fade-in" -->
 
 <img src="assets/arrow-down.svg" alt="arrow-down" style="width:50px;"/>
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ![website](/assets/website.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 --
 
 ![developer](/assets/developer.svg)
+<!-- .element: class="fragment fade-in svg-white" -->
 
 > Welcome123
 <!-- .element: class="fragment fade-in" -->
 
 <img src="assets/arrow-down.svg" alt="arrow-dow" style="width:50px;"/>
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ![database](/assets/database.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 --
 
 ![malicious-party](/assets/malicious_party.svg)
+<!-- .element: class="fragment fade-in svg-white" -->
 
 <img src="assets/arrow-up.svg" alt="arrow" style="width:50px;"/>
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 > Welcome123
 <!-- .element: class="fragment fade-in" -->
 
 ![database](/assets/database.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ---
 
 ![user](/assets/user.svg)
+<!-- .element: class="fragment fade-in svg-white" -->
 
 > Welcome123
 <!-- .element: class="fragment fade-in" -->
 
 <img src="assets/arrow-down.svg" alt="arrow-down" style="width:50px;"/>
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ![website](/assets/website.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 --
 
 ![developer](/assets/developer.svg)
+<!-- .element: class="fragment fade-in svg-white" -->
 
 > `************`
 <!-- .element: class="fragment fade-in" -->
 
 <img src="assets/arrow-down.svg" alt="arrow-dow" style="width:50px;"/>
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ![database](/assets/encrypted-database.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 --
 
 ![malicious-party](/assets/malicious_party.svg)
+<!-- .element: class="fragment fade-in svg-white" -->
 
 > Welcome123
 <!-- .element: class="fragment fade-in" -->
 
 <img src="assets/arrow-down.svg" alt="arrow-down" style="width:50px;"/>
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ![website](/assets/website.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ---
 
@@ -102,6 +107,7 @@ Something about a lot of passwords leaked online
 ---
 
 ![user](/assets/user.svg)
+<!-- .element: class="fragment fade-in svg-white" -->
 
 > Correct Horse Battery Staple
 <!-- .element: class="fragment fade-in" -->
@@ -110,7 +116,7 @@ Something about a lot of passwords leaked online
 <!-- .element: class="fragment fade-in" -->
 
 ![website](/assets/website.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 --
 
@@ -119,9 +125,10 @@ Something about a lot of passwords leaked online
 --
 
 ![developer](/assets/developer.svg)
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ![forgot-password](/assets/forgot-password.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 > Password forget flow
 <!-- .element: class="fragment fade-in" -->
@@ -129,9 +136,10 @@ Something about a lot of passwords leaked online
 --
 
 ![malicious-party](/assets/malicious_party.svg)
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ![phishing](/assets/phishing.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 > Phising sites
 <!-- .element: class="fragment fade-in" -->
@@ -139,9 +147,10 @@ Something about a lot of passwords leaked online
 ---
 
 ![user](/assets/user.svg)
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ![password-manager](/assets/password-manager.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 > Password manager
 <!-- .element: class="fragment fade-in" -->
@@ -149,9 +158,10 @@ Something about a lot of passwords leaked online
 --
 
 ![developer](/assets/developer.svg)
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ![compliance](/assets/compliance.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 > - Password policies
 > - Periodic renewal of passwords
@@ -161,9 +171,10 @@ Something about a lot of passwords leaked online
 --
 
 ![malicious-party](/assets/malicious_party.svg)
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ![brute-force](/assets/brute-force.svg)
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 > Brute forcing
 <!-- .element: class="fragment fade-in" -->
@@ -175,24 +186,27 @@ Something about a lot of passwords leaked online
 --
 
 ![user](/assets/user.svg)
+<!-- .element: class="svg-white" -->
 
 > Frustrated
 
 --
 
 ![developer](/assets/developer.svg)
+<!-- .element: class="svg-white" -->
 
 > Annoyed
 
 --
 
 ![malicious-party](/assets/malicious_party.svg)
+<!-- .element: class="svg-white" -->
 
 > Will find a way to get your password!
 
 ---
 
-### We are __sharing__ our __secret__!
+### We are _sharing_ our _secret_!
 
 ---
 
@@ -264,10 +278,13 @@ Roaming Authenticators
 --
 
 <iframe style="width:100%; height:400px;" data-src="https://localhost/auth/realms/passwordless/account/" data-preload></iframe>
-<io-webcam-view style="display: inline-block; width: 400px;" width="720" height="400" deviceid="ea1ea8ff3fdf07a6c05e83888d6f0a683e9aa7f4ef2eb9a41f6f58b3c4e20903">
-  <h1>Vite + Lit</h1>
+<io-webcam-view style="display: inline-block; width: 400px;" width="720" height="400">
+  webcam view
 </io-webcam-view>
 
 ---
 
 ## Thank you
+
+> Start forgetting those passwords
+<!-- .element: class="fragment fade-in" -->
