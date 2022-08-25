@@ -5,7 +5,7 @@ services:
     container_name: nginx_rproxy
     restart: unless-stopped
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./etc/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./dist:/data/www
       - ./etc/letsencrypt/:/etc/letsencrypt/
     ports:
