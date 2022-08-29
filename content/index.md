@@ -6,11 +6,12 @@
 <!-- .element: class="svg-white" -->
 
 > Welcome123
-<!-- .element: class="fragment fade-in" -->
 
-<img src="assets/arrow-down.svg" alt="arrow-down" style="width:50px;"/><br />
-<img src="assets/website.svg" alt="website" />
-<!-- .element: class="fragment fade-in svg-white" -->
+<img src="assets/arrow-down.svg" alt="arrow-down"/>
+<!-- .element: style="width:50px" class="svg-white" -->
+
+![website](/assets/website.svg)
+<!-- .element: class="svg-white" -->
 
 --
 
@@ -19,9 +20,11 @@
 
 > Welcome123
 
-<img src="assets/arrow-down.svg" alt="arrow-down" style="width:50px;"/><br />
-<img src="assets/database.svg" alt="database" />
-<!-- .element: class="fragment fade-in svg-white" -->
+<img src="assets/arrow-down.svg" alt="arrow-down"/>
+<!-- .element: style="width:50px" class="svg-white" -->
+
+![database](/assets/database.svg)
+<!-- .element: class="svg-white" -->
 
 --
 
@@ -29,12 +32,12 @@
 <!-- .element: class="svg-white" -->
 
 > Welcome123
-<!-- .element: class="fragment fade-in" -->
 
-<img src="assets/arrow-up.svg" alt="arrow-up" style="width:50px;"/><br />
-<img src="assets/database.svg" alt="database"/>
-<!-- .element: class="fragment fade-in svg-white" -->
+<img src="assets/arrow-up.svg" alt="arrow-up" style="width:50px;"/>
+<!-- .element: style="width:50px" class="svg-white" -->
 
+![database](/assets/database.svg)
+<!-- .element: class="svg-white" -->
 ---
 
 ![user](/assets/user.svg)
@@ -42,9 +45,11 @@
 
 > Welcome123
 
-<img src="assets/arrow-down.svg" alt="arrow-down" style="width:50px;"/><br />
-<img src="assets/website.svg" alt="website" />
-<!-- .element: class="fragment fade-in svg-white" -->
+<img src="assets/arrow-down.svg" alt="arrow-down"/>
+<!-- .element: style="width:50px" class="svg-white" -->
+
+![website](/assets/website.svg)
+<!-- .element: class="svg-white" -->
 
 --
 
@@ -52,11 +57,12 @@
 <!-- .element: class="svg-white" -->
 
 > `************`
-<!-- .element: class="fragment fade-in" -->
 
-<img src="assets/arrow-down.svg" alt="arrow-down" style="width:50px;"/><br />
-<img src="assets/encrypted-database.svg" alt="encrypted-database"/>
-<!-- .element: class="fragment fade-in svg-white" -->
+<img src="assets/arrow-down.svg" alt="arrow-down" />
+<!-- .element: style="width:50px" class="svg-white" -->
+
+![encrypted-database](/assets/encrypted-database.svg)
+<!-- .element: class="svg-white" -->
 
 --
 
@@ -64,23 +70,25 @@
 <!-- .element: class="svg-white" -->
 
 > Welcome123
-<!-- .element: class="fragment fade-in" -->
 
-<img src="assets/arrow-down.svg" alt="arrow-down" style="width:50px;"/><br />
-<img src="assets/website.svg" alt="website" />
-<!-- .element: class="fragment fade-in svg-white" -->
+<img src="assets/arrow-down.svg" alt="arrow-down"/>
+<!-- .element: style="width:50px" class="svg-white" -->
+
+![website](/assets/website.svg)
+<!-- .element: class="svg-white" -->
 
 ---
 
 ![user](/assets/user.svg)
-<!-- .element: class="fragment fade-in svg-white" -->
+<!-- .element: class="svg-white" -->
 
 > Correct Horse Battery Staple
-<!-- .element: class="fragment fade-in" -->
 
-<img src="assets/arrow-down.svg" alt="arrow-down" style="width:50px;"/><br />
-<img src="assets/website.svg" alt="website" />
-<!-- .element: class="fragment fade-in svg-white" -->
+<img src="assets/arrow-down.svg" alt="arrow-down" />
+<!-- .element: style="width:50px" class="svg-white" -->
+
+![website](/assets/website.svg)
+<!-- .element: class="svg-white" -->
 
 --
 
@@ -93,12 +101,12 @@
 
 ![forgot-password](/assets/forgot-password.svg)
 ![forgot-password](/assets/compliance.svg)
-<!-- .element: class="fragment svg-white" -->
+<!-- .element: class="svg-white" -->
 
-> Password forget flow <br />
-> Password policies <br />
-> Renewal of passwords
-<!-- .element: class="fragment fade-in svg-white" -->
+> - Password forget flow
+> - Password policies
+> - Renewal of passwords
+<!-- .element: class="svg-white" -->
 
 --
 
@@ -107,15 +115,15 @@
 
 ![phishing](/assets/phishing.svg)
 ![phishing](/assets/brute-force.svg)
-<!-- .element: class="fragment fade-in svg-white" -->
+<!-- .element: class="svg-white" -->
 
-> Phising sites <br />
-> Brute force
-<!-- .element: class="fragment fade-in" -->
+> - Phishing sites
+> - Brute force
+<!-- .element: class="fade-in" -->
 
 ---
 
-Something about a lot of passwords leaked online
+![haveibeenpwned-password](/assets/haveibeenpwned-password.png)
 
 ---
 
@@ -179,35 +187,137 @@ Developer Advocate @ _iO_</br>
 ## Single Sign-on
 
 ![sso](/assets/sso.png)
-<!-- .element: class="fragment fade-in" -->
 
 --
 
-## Single Sign-on
-1. ✔️ Easy to use
-<!-- .element: class="fragment fade-in" -->
-2. ✔️ High security standards
-<!-- .element: class="fragment fade-in" -->
-3. ✔️ Only one password
-<!-- .element: class="fragment fade-in" -->
+![user](/assets/user.svg)
+<!-- .element: class="svg-white" -->
+✔️ Easy to use
 
 --
 
-## Single Sign-on
-1. ❌ Privacy implications
-<!-- .element: class="fragment fade-in" -->
-2. ❌ Relying (again) on big tech companies
-<!-- .element: class="fragment fade-in" -->
-3. ❌ Still using a password!
-<!-- .element: class="fragment fade-in" -->
+![developer](/assets/developer.svg)
+<!-- .element: class="svg-white" -->
+✔️ No complex security
+
+--
+
+![malicious-party](/assets/malicious_party.svg)
+<!-- .element: class="svg-white" -->
+✔️ Gain access to big tech
+
+--
+
+![user](/assets/user.svg)
+<!-- .element: class="svg-white" -->
+❌ Privacy implications
+
+--
+
+![developer](/assets/developer.svg)
+<!-- .element: class="svg-white" -->
+❌ Relying on big tech companies
+
+--
+
+![malicious-party](/assets/malicious_party.svg)
+<!-- .element: class="svg-white" -->
+❌ __Still using a password!__
 
 ---
 
-## 2FA
+## 2 step verification
+
+![2fa](/assets/2fa.webp)
+
+--
+
+![user](/assets/user.svg)
+<!-- .element: class="svg-white" -->
+✔️ Easy to use
+
+--
+
+![developer](/assets/developer.svg)
+<!-- .element: class="svg-white" -->
+✔️ No complex security
+
+--
+
+![malicious-party](/assets/malicious_party.svg)
+<!-- .element: class="svg-white" -->
+✔️ Gain access to big tech
+
+--
+
+![user](/assets/user.svg)
+<!-- .element: class="svg-white" -->
+❌ Single point of failure
+
+--
+
+![developer](/assets/developer.svg)
+<!-- .element: class="svg-white" -->
+❌ ?
+
+--
+
+![malicious-party](/assets/malicious_party.svg)
+<!-- .element: class="svg-white" -->
+❌ Vunarable for phishing attacks
 
 ---
 
 ## Passwordless
+
+--
+
+<div>
+
+![magic-link](/assets/magic-link.svg)
+Magic link
+
+![push-notification](/assets/push-notification.svg)
+Push notification
+
+</div>
+<!-- .element: class="svg-white" -->
+
+--
+
+![user](/assets/user.svg)
+<!-- .element: class="svg-white" -->
+✔️ Easy to use
+
+--
+
+![developer](/assets/developer.svg)
+<!-- .element: class="svg-white" -->
+✔️ No passwords to store
+
+--
+
+![malicious-party](/assets/malicious_party.svg)
+<!-- .element: class="svg-white" -->
+✔️ No passwords to steal
+
+--
+
+![user](/assets/user.svg)
+<!-- .element: class="svg-white" -->
+❌ Additional service needed
+
+--
+
+![developer](/assets/developer.svg)
+<!-- .element: class="svg-white" -->
+❌ No standard way to implement
+
+--
+
+![malicious-party](/assets/malicious_party.svg)
+<!-- .element: class="svg-white" -->
+❌ Vunarable for phishing attacks
 
 ---
 
@@ -258,6 +368,9 @@ Roaming Authenticators
 ---
 
 ## WebAuthn API
+<io-webcam-view style="display: inline-block; width: 1080px;">
+  webcam view
+</io-webcam-view>
 
 --
 
@@ -306,6 +419,9 @@ const publicKeyCredentialRequestOptions = {
 }
 ```
 ---
+
+
+
 
 ## Thank you
 
