@@ -192,7 +192,7 @@ Developer Advocate @ _iO_</br>
 
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
-✔️ Easy to use
+✔️ Login with a single click
 
 --
 
@@ -204,7 +204,7 @@ Developer Advocate @ _iO_</br>
 
 ![malicious-party](/assets/malicious_party.svg)
 <!-- .element: class="svg-white" -->
-✔️ Gain access to big tech
+✔️ Deal with big tech security
 
 --
 
@@ -222,7 +222,7 @@ Developer Advocate @ _iO_</br>
 
 ![malicious-party](/assets/malicious_party.svg)
 <!-- .element: class="svg-white" -->
-❌ __Still using a password!__
+❌ Can still steal your __password__
 
 ---
 
@@ -234,37 +234,37 @@ Developer Advocate @ _iO_</br>
 
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
-✔️ Easy to use
+✔️ Common practice
 
 --
 
 ![developer](/assets/developer.svg)
 <!-- .element: class="svg-white" -->
-✔️ No complex security
+✔️ Easy to implement
 
 --
 
 ![malicious-party](/assets/malicious_party.svg)
 <!-- .element: class="svg-white" -->
-✔️ Gain access to big tech
+✔️ Need access to your authenticator
 
 --
 
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
-❌ Single point of failure
+❌ Not everyone enables it
 
 --
 
 ![developer](/assets/developer.svg)
 <!-- .element: class="svg-white" -->
-❌ ?
+❌ Still have to deal with a __password__!
 
 --
 
 ![malicious-party](/assets/malicious_party.svg)
 <!-- .element: class="svg-white" -->
-❌ Vunarable for phishing attacks
+❌ Phishing attack possible
 
 ---
 
@@ -287,7 +287,7 @@ Push notification
 
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
-✔️ Easy to use
+✔️ Common practice
 
 --
 
@@ -317,32 +317,59 @@ Push notification
 
 ![malicious-party](/assets/malicious_party.svg)
 <!-- .element: class="svg-white" -->
-❌ Vunarable for phishing attacks
+
+❌ Phishing attack still possible
 
 ---
 
-> ![fido-alliance](/assets/fido-alliance.png)
+<img src="/assets/fido-alliance.png" alt="fido-alliance" style="width:40%;"/>
+
+> Reduce over-reliance on passwords
+<!-- .element: class="fragment fade-in-then-semi-out" -->
 
 --
 
-#### FIDO Alliance
-> - Standards to reduce passwords<!-- .element: class="fragment fade-in-then-semi-out" -->
-> - Google, Mirosoft, Apple and Mozilla<!-- .element: class="fragment fade-in-then-semi-out" -->
-> - Passwordless authentication!<!-- .element: class="fragment fade-in" -->
+## FIDO Protocol
 
 ![yubi-key](/assets/yubi-key.png)<!-- .element: class="fragment fade-in" -->
 
+--
+
+## FIDO2 Protocol
+
+- Google, Microsoft, Apple and Mozilla<!-- .element: class="fragment fade-in-then-semi-out" -->
+- Enables passwordless for browsers!<!-- .element: class="fragment fade-in" -->
+
 ---
+
+<div>
+
+<img src="assets/webauthentication.svg" alt="webauthentication" style="width:250px;"/>
+<br />
+W3C Web Authentication specification 
+(WebAuthn)
+
+</div>
+
+<div>
+
+<img src="assets/ctap.png" alt="ctap" style="width:250px;"/>
+<br />
+Client to authenticator Protocol (CTAP)
+
+</div>
+
+--
 
 <img src="assets/webauthentication.svg" alt="webauthentication" style="width:250px;"/>
 
-><img src="assets/edge.png" alt="edge" style="width:80px;"/>
-  <br />Browser Support
-<!-- .element: class="fragment fade-in" -->
+><img src="assets/standerdization.svg" alt="standerdization" style="width:80px;"/>
+  <br />Standardization
+<!-- .element: class="fragment fade-in svg-white" -->
 
 ><img src="assets/key-pair.svg" alt="key-pair" style="width:125px;"/> 
 <br />Public Key Cryptography
-<!-- .element: class="fragment fade-in" -->
+<!-- .element: class="fragment fade-in svg-white" -->
 
 --
 
@@ -360,17 +387,41 @@ Roaming Authenticators
 
 --
 
+#### Setup
+<iframe style="width:100%; height:500px;" data-src="https://localhost/auth/" data-preload></iframe>
+
+--
+
 <iframe style="width:100%; height:400px;" data-src="https://localhost/auth/realms/passwordless/account/" data-preload></iframe>
 <io-webcam-view style="display: inline-block; width: 400px;" width="720" height="400">
   webcam view
 </io-webcam-view>
 
----
+--
 
-## WebAuthn API
-<io-webcam-view style="display: inline-block; width: 1080px;">
+<io-webcam-view style="display: inline-block;" width="720" height="400">
   webcam view
 </io-webcam-view>
+
+---
+
+## Flow in detail
+
+--
+
+#### Registration
+
+![registration](/assets/registration.svg)<!-- .element: class="" -->
+
+--
+
+#### Authentication
+
+![authentication](/assets/authentication.svg)<!-- .element: class="" -->
+
+---
+
+## Frontend
 
 --
 
@@ -418,10 +469,53 @@ const publicKeyCredentialRequestOptions = {
     timeout: 60000
 }
 ```
+--
+
+## Backend
+
+--
+
+## Registration
+
+--
+
+## Authentication
+
 ---
 
+## But what if I lose my authenticator?
 
+--
 
+## Pass keys
+
+---
+
+## What did we achieve?
+
+--
+
+![user](/assets/user.svg)
+<!-- .element: class="svg-white" -->
+✔️ Can't forget your passwords
+
+--
+
+![developer](/assets/developer.svg)
+<!-- .element: class="svg-white" -->
+✔️ Easy implementation
+
+--
+
+![malicious-party](/assets/malicious_party.svg)
+<!-- .element: class="svg-white" -->
+✔️ Can only steal your public key
+
+--
+
+## Start using it today!
+
+---
 
 ## Thank you
 
