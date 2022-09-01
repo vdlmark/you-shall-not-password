@@ -108,6 +108,8 @@
 > - Renewal of passwords
 <!-- .element: class="svg-white" -->
 
+[comment]: <> (Only icons or text?)
+
 --
 
 ![malicious-party](/assets/malicious_party.svg)
@@ -120,6 +122,8 @@
 > - Phishing sites
 > - Brute force
 <!-- .element: class="fade-in" -->
+
+[comment]: <> (Only icons or text?)
 
 ---
 
@@ -206,6 +210,8 @@ Developer Advocate @ _iO_</br>
 <!-- .element: class="svg-white" -->
 ✔️ Deal with big tech security
 
+[comment]: <> (Combine these into one page)
+
 --
 
 ![user](/assets/user.svg)
@@ -223,6 +229,8 @@ Developer Advocate @ _iO_</br>
 ![malicious-party](/assets/malicious_party.svg)
 <!-- .element: class="svg-white" -->
 ❌ Can still steal your __password__
+
+[comment]: <> (Combine these into one page)
 
 ---
 
@@ -248,6 +256,8 @@ Developer Advocate @ _iO_</br>
 <!-- .element: class="svg-white" -->
 ✔️ Need access to your authenticator
 
+[comment]: <> (Combine these into one page)
+
 --
 
 ![user](/assets/user.svg)
@@ -266,21 +276,18 @@ Developer Advocate @ _iO_</br>
 <!-- .element: class="svg-white" -->
 ❌ Phishing attack possible
 
+[comment]: <> (Combine these into one page)
+
 ---
 
 ## Passwordless
 
---
-
-<div>
+[comment]: <> (We should maybe cut this one out)
 
 ![magic-link](/assets/magic-link.svg)
-Magic link
+<!-- .element: class="svg-white" -->
 
 ![push-notification](/assets/push-notification.svg)
-Push notification
-
-</div>
 <!-- .element: class="svg-white" -->
 
 --
@@ -305,7 +312,7 @@ Push notification
 
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
-❌ Additional service needed
+❌ Additional service or app needed
 
 --
 
@@ -322,10 +329,24 @@ Push notification
 
 ---
 
+### Two factor authentication
+#### Something you...
+
+<img src="assets/password.svg" alt="password" style="width:150px;"/>
+<!-- .element: class="svg-white fragment fade-in" -->
+<img src="assets/key.svg" alt="key" style="width:150px;"/>
+<!-- .element: class="svg-white fragment fade-in" -->
+<img src="assets/fingerprint.svg" alt="fingerprint" style="width:150px;"/>
+<!-- .element: class="svg-white fragment fade-in" -->
+
+[comment]: <> (fade out password)
+
+---
+
 <img src="/assets/fido-alliance.png" alt="fido-alliance" style="width:40%;"/>
 
 > Reduce over-reliance on passwords
-<!-- .element: class="fragment fade-in-then-semi-out" -->
+<!-- .element: class="fragment fade-in" -->
 
 --
 
@@ -340,14 +361,16 @@ Push notification
 - Google, Microsoft, Apple and Mozilla<!-- .element: class="fragment fade-in-then-semi-out" -->
 - Enables passwordless for browsers!<!-- .element: class="fragment fade-in" -->
 
+[comment]: <> (Maybe have the logo's of google, microsoft etc. change into the respective browsers)
+
 ---
 
 <div>
 
 <img src="assets/webauthentication.svg" alt="webauthentication" style="width:250px;"/>
 <br />
-W3C Web Authentication specification 
-(WebAuthn)
+
+##### Web Authentication (WebAuthn)
 
 </div>
 
@@ -355,7 +378,8 @@ W3C Web Authentication specification
 
 <img src="assets/ctap.png" alt="ctap" style="width:250px;"/>
 <br />
-Client to authenticator Protocol (CTAP)
+
+##### Client to authenticator Protocol (CTAP)
 
 </div>
 
@@ -364,7 +388,7 @@ Client to authenticator Protocol (CTAP)
 <img src="assets/webauthentication.svg" alt="webauthentication" style="width:250px;"/>
 
 ><img src="assets/standerdization.svg" alt="standerdization" style="width:80px;"/>
-  <br />Standardization
+  <br />Standard
 <!-- .element: class="fragment fade-in svg-white" -->
 
 ><img src="assets/key-pair.svg" alt="key-pair" style="width:125px;"/> 
@@ -374,12 +398,14 @@ Client to authenticator Protocol (CTAP)
 --
 
 Platform Authenticators
-> ![platform-authenticators](/assets/platform-authenticators.svg)
+
+![platform-authenticators](/assets/platform-authenticators.svg)
 
 --
 
 Roaming Authenticators
-> ![roaming-authenticators](/assets/roaming-authenticators.svg)
+
+![roaming-authenticators](/assets/roaming-authenticators.svg)
 
 ---
 
@@ -387,10 +413,13 @@ Roaming Authenticators
 
 --
 
-#### Setup
+[comment]: <> (Setup in Keycloak)
+
 <iframe style="width:100%; height:500px;" data-src="https://localhost/auth/" data-preload></iframe>
 
 --
+
+[comment]: <> (Registration and authentication via laptop)
 
 <iframe style="width:100%; height:400px;" data-src="https://localhost/auth/realms/passwordless/account/" data-preload></iframe>
 <io-webcam-view style="display: inline-block; width: 400px;" width="720" height="400">
@@ -398,6 +427,8 @@ Roaming Authenticators
 </io-webcam-view>
 
 --
+
+[comment]: <> (Registration and authentication via phone)
 
 <io-webcam-view style="display: inline-block;" width="720" height="400">
   webcam view
@@ -488,6 +519,9 @@ const publicKeyCredentialRequestOptions = {
 --
 
 ## Pass keys
+#### Multi-device FIDO credentials
+
+[comment]: <> (image explaining keys sync with google/apple account)
 
 ---
 
@@ -511,9 +545,7 @@ const publicKeyCredentialRequestOptions = {
 <!-- .element: class="svg-white" -->
 ✔️ Can only steal your public key
 
---
-
-## Start using it today!
+[comment]: <> (combine these into single slide)
 
 ---
 
