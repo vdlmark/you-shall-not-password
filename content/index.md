@@ -196,19 +196,19 @@ Developer Advocate @ _iO_</br>
 
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
-✔️ Login with a single click
+✅ Login with a single click
 
 --
 
 ![developer](/assets/developer.svg)
 <!-- .element: class="svg-white" -->
-✔️ No complex security
+✅ No complex security
 
 --
 
 ![malicious-party](/assets/malicious_party.svg)
 <!-- .element: class="svg-white" -->
-✔️ Deal with big tech security
+✅ Deal with big tech security
 
 [comment]: <> (Combine these into one page)
 
@@ -242,19 +242,19 @@ Developer Advocate @ _iO_</br>
 
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
-✔️ Common practice
+✅ Common practice
 
 --
 
 ![developer](/assets/developer.svg)
 <!-- .element: class="svg-white" -->
-✔️ Easy to implement
+✅ Easy to implement
 
 --
 
 ![malicious-party](/assets/malicious_party.svg)
 <!-- .element: class="svg-white" -->
-✔️ Need access to your authenticator
+✅ Need access to your authenticator
 
 [comment]: <> (Combine these into one page)
 
@@ -285,8 +285,6 @@ Developer Advocate @ _iO_</br>
 [comment]: <> (We should maybe cut this one out)
 
 ![magic-link](/assets/magic-link.svg)
-<!-- .element: class="svg-white" -->
-
 ![push-notification](/assets/push-notification.svg)
 <!-- .element: class="svg-white" -->
 
@@ -294,19 +292,19 @@ Developer Advocate @ _iO_</br>
 
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
-✔️ Common practice
+✅ Common practice
 
 --
 
 ![developer](/assets/developer.svg)
 <!-- .element: class="svg-white" -->
-✔️ No passwords to store
+✅ No passwords to store
 
 --
 
 ![malicious-party](/assets/malicious_party.svg)
 <!-- .element: class="svg-white" -->
-✔️ No passwords to steal
+✅ No passwords to steal
 
 --
 
@@ -440,13 +438,13 @@ Roaming Authenticators
 
 --
 
-#### Registration
+### Registration
 
 ![registration](/assets/registration.svg)<!-- .element: class="" -->
 
 --
 
-#### Authentication
+### Authentication
 
 ![authentication](/assets/authentication.svg)<!-- .element: class="" -->
 
@@ -456,7 +454,7 @@ Roaming Authenticators
 
 --
 
-## Registration
+### Registration
 
 ```js[1-3|6|7-10|11-15|16|17-19|20]
 const credential = await navigator.credentials.create({
@@ -481,9 +479,10 @@ const publicKeyCredentialCreationOptions = {
     timeout: 60000
 };
 ```
+
 --
 
-## Authentication
+### Authentication
 
 ```js[1-3|6|7-11|12]
 const credential = await navigator.credentials.get({
@@ -500,6 +499,7 @@ const publicKeyCredentialRequestOptions = {
     timeout: 60000
 }
 ```
+
 --
 
 ## Backend
@@ -531,19 +531,19 @@ const publicKeyCredentialRequestOptions = {
 
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
-✔️ Can't forget your passwords
+✅ Can't forget your passwords
 
 --
 
 ![developer](/assets/developer.svg)
 <!-- .element: class="svg-white" -->
-✔️ Easy implementation
+✅ Easy implementation
 
 --
 
 ![malicious-party](/assets/malicious_party.svg)
 <!-- .element: class="svg-white" -->
-✔️ Can only steal your public key
+✅ Can only steal your public key
 
 [comment]: <> (combine these into single slide)
 
