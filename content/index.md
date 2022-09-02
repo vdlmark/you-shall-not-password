@@ -43,7 +43,7 @@
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
 
-> Welcome123
+> Welcome123 ♻️
 
 <img src="assets/arrow-down.svg" alt="arrow-down"/>
 <!-- .element: style="width:50px" class="svg-white" -->
@@ -127,7 +127,7 @@
 
 ---
 
-![haveibeenpwned-password](/assets/haveibeenpwned-password.png)
+![leaked-passwords](/assets/leaked-passwords.png)
 
 ---
 
@@ -331,7 +331,7 @@ Developer Advocate @ _iO_</br>
 #### Something you...
 
 <img src="assets/password.svg" alt="password" style="width:150px;"/>
-<!-- .element: class="svg-white fragment fade-in" -->
+<!-- .element: class="svg-white fragment fade-in-then-semi-out" -->
 <img src="assets/key.svg" alt="key" style="width:150px;"/>
 <!-- .element: class="svg-white fragment fade-in" -->
 <img src="assets/fingerprint.svg" alt="fingerprint" style="width:150px;"/>
@@ -407,10 +407,6 @@ Roaming Authenticators
 
 ---
 
-## DEMO
-
---
-
 [comment]: <> (Setup in Keycloak)
 
 <iframe style="width:100%; height:500px;" data-src="https://localhost/auth/" data-preload></iframe>
@@ -434,27 +430,17 @@ Roaming Authenticators
 
 ---
 
-## Flow in detail
+## Implementation
 
 --
 
-### Registration
+#### Registration
 
 ![registration](/assets/registration.svg)<!-- .element: class="" -->
 
 --
 
-### Authentication
-
-![authentication](/assets/authentication.svg)<!-- .element: class="" -->
-
----
-
-## Frontend
-
---
-
-### Registration
+### Frontend
 
 ```js[1-3|6|7-10|11-15|16|17-19|20]
 const credential = await navigator.credentials.create({
@@ -462,15 +448,15 @@ const credential = await navigator.credentials.create({
 });
 
 const publicKeyCredentialCreationOptions = {
-    challenge: ******,
+    challenge: "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
     rp: {
         name: "iO",
         id: "iodigital.com",
     },
     user: {
-        id: ******,
-        name: "mark.vanderlinden@iodigital.com",
-        displayName: "Mark",
+      "name": "mark",
+      "displayName": "Mark van der Linden",
+      "id": "Ve_TC1ROGx8gxgqIXg4QK_HdNgYA1DueCk76aJQeOGn1Ig3Q9NNQJSlmN54xabrWu3qGye-8i7lfW4tscEDMvw"
     },
     pubKeyCredParams: [{alg: -7, type: "public-key"}],
     authenticatorSelection: {
@@ -482,15 +468,103 @@ const publicKeyCredentialCreationOptions = {
 
 --
 
+### Backend
+
+```xml
+<dependency>
+  <groupId>com.yubico</groupId>
+  <artifactId>webauthn-server-core</artifactId>
+  <version>2.0.0</version>
+</dependency>
+```
+
+--
+
+### Backend (2)
+
+```java[1-4|6-9|11-17|18-23]
+RelyingPartyIdentity rpIdentity = RelyingPartyIdentity.builder()
+    .id("iodigital.com") 
+    .name("iO Application")
+    .build();
+
+RelyingParty rp = RelyingParty.builder()
+    .identity(rpIdentity)
+    .credentialRepository(new MyCredentialRepository())
+    .build();
+
+byte[] userHandle = new byte[64];
+random.nextBytes(userHandle);
+UserIdentity user = UserIdentity.builder()
+  .name("mark")
+  .displayName("Mark van der Linden")
+  .id(new ByteArray(userHandle))
+  .build();
+
+PublicKeyCredentialCreationOptions request = 
+  rp.startRegistration(StartRegistrationOptions.builder()
+    .user(user)
+    .build());
+return request.toCredentialsCreateJson();
+```
+
+--
+
+### Backend (3)
+
+```json[2-5|6-10|11|12]
+{
+  "rp": {
+    "name": "iO Application",
+    "id": "iodigital.com"
+  },
+  "user": {
+    "name": "mark",
+    "displayName": "Mark van der Linden",
+    "id": "*****"
+  },
+  "challenge": "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
+  "pubKeyCredParams": [{alg: -7, type: "public-key"}]
+}
+```
+
+--
+
+### Backend (4)
+
+```java[1-3|5-9|11]
+String publicKeyCredentialJson = /* ... */; 
+PublicKeyCredential pkc = PublicKeyCredential
+  .parseRegistrationResponseJson(publicKeyCredentialJson);
+
+RegistrationResult result = rp.finishRegistration(
+  FinishRegistrationOptions.builder()
+    .request(request)
+    .response(pkc)
+    .build());
+
+ByteArray publicKey = result.getPublicKeyCose();
+PublicKeyCredentialDescriptor keyId = result.getKeyId();
+```
+
+--
+
 ### Authentication
 
-```js[1-3|6|7-11|12]
+![authentication](/assets/authentication.svg)<!-- .element: class="" -->
+
+--
+
+### Frontend
+
+```js[1-3|6|7|8-12|13]
 const credential = await navigator.credentials.get({
     publicKey: publicKeyCredentialRequestOptions
 });
 
 const publicKeyCredentialRequestOptions = {
-    challenge: ******,
+    challenge: "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
+    rpId: "iodigital.com",
     allowCredentials: [{
         id: ******,
         type: 'public-key',
@@ -504,13 +578,49 @@ const publicKeyCredentialRequestOptions = {
 
 ## Backend
 
+```java[1-4|6]
+AssertionRequest request = rp.startAssertion(
+  StartAssertionOptions.builder()
+    .username("mark")
+    .build());
+
+return request.toCredentialsGetJson();
+```
+
 --
 
-## Registration
+### Backend (2)
+
+```json[2|3|4-8]
+{
+  "challenge": "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
+  "rpId": "iodigital.com",
+  "allowCredentials": [{
+    transports: "usb",
+    type: "public-key",
+    id: "******"
+  }]
+}
+```
 
 --
 
-## Authentication
+## Backend (3)
+
+```java[1-3|5-9|11-12]
+String publicKeyCredentialJson = /* ... */;
+PublicKeyCredential pkc = PublicKeyCredential
+  .parseAssertionResponseJson(publicKeyCredentialJson);
+
+AssertionResult result = rp.finishAssertion(
+  FinishAssertionOptions.builder()
+    .request(request)
+    .response(pkc)
+    .build());
+
+boolean success = result.isSuccess();
+String username = result.getUsername();
+```
 
 ---
 
