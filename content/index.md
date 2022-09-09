@@ -354,14 +354,27 @@ Developer Advocate @ _iO_</br>
 
 --
 
-## FIDO2 Protocol
+## FIDO2 Protocol 
 
-- Google, Microsoft, Apple and Mozilla<!-- .element: class="fragment fade-in-then-semi-out" -->
-- Enables passwordless for browsers!<!-- .element: class="fragment fade-in" -->
+<div>
+  <img src="assets/microsoft.svg" alt="microsoft" style="width:80px;"/>
+  <img src="assets/google.svg" alt="google" style="width:80px;"/>
+  <img src="assets/apple.svg" alt="apple" style="width:80px;"/>
+  <img src="assets/firefox-browser.svg" alt="firefox" style="width:80px;"/>
+</div>
+<!-- .element: class="svg-white fragment fade-in-then-semi-out" -->
+
+<div>
+  <img src="assets/edge.svg" alt="edge" style="width:80px;"/>
+  <img src="assets/chrome.svg" alt="chrome" style="width:80px;"/>
+  <img src="assets/safari.svg" alt="safari" style="width:80px;"/>
+  <img src="assets/firefox-browser.svg" alt="firefox" style="width:80px;"/>
+</div>
+<!-- .element: class="svg-white fragment fade-in-then-semi-out" -->
 
 [comment]: <> (Maybe have the logo's of google, microsoft etc. change into the respective browsers)
 
----
+--
 
 <div>
 
@@ -407,29 +420,6 @@ Roaming Authenticators
 
 ---
 
-[comment]: <> (Setup in Keycloak)
-
-<iframe style="width:100%; height:500px;" data-src="https://localhost/auth/" data-preload></iframe>
-
---
-
-[comment]: <> (Registration and authentication via laptop)
-
-<iframe style="width:100%; height:400px;" data-src="https://localhost/auth/realms/passwordless/account/" data-preload></iframe>
-<io-webcam-view style="display: inline-block; width: 400px;" width="720" height="400">
-  webcam view
-</io-webcam-view>
-
---
-
-[comment]: <> (Registration and authentication via phone)
-
-<io-webcam-view style="display: inline-block;" width="720" height="400">
-  webcam view
-</io-webcam-view>
-
----
-
 ## Implementation
 
 --
@@ -437,34 +427,6 @@ Roaming Authenticators
 #### Registration
 
 ![registration](/assets/registration.svg)<!-- .element: class="" -->
-
---
-
-### Frontend
-
-```js[1-3|6|7-10|11-15|16|17-19|20]
-const credential = await navigator.credentials.create({
-    publicKey: publicKeyCredentialCreationOptions
-});
-
-const publicKeyCredentialCreationOptions = {
-    challenge: "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
-    rp: {
-        name: "iO",
-        id: "iodigital.com",
-    },
-    user: {
-      "name": "mark",
-      "displayName": "Mark van der Linden",
-      "id": "Ve_TC1ROGx8gxgqIXg4QK_HdNgYA1DueCk76aJQeOGn1Ig3Q9NNQJSlmN54xabrWu3qGye-8i7lfW4tscEDMvw"
-    },
-    pubKeyCredParams: [{alg: -7, type: "public-key"}],
-    authenticatorSelection: {
-        authenticatorAttachment: "cross-platform",
-    },
-    timeout: 60000
-};
-```
 
 --
 
@@ -512,7 +474,7 @@ return request.toCredentialsCreateJson();
 
 ### Backend (3)
 
-```json[2-5|6-10|11|12]
+```json[2-5|6-10|11|12|13]
 {
   "rp": {
     "name": "iO Application",
@@ -521,18 +483,44 @@ return request.toCredentialsCreateJson();
   "user": {
     "name": "mark",
     "displayName": "Mark van der Linden",
-    "id": "*****"
+    "id": "Ve_TC1ROGx8gxgqIXg4QK_HdNgYA1DueCk76aJQeOGn1Ig3Q9NNQJSlmN54xabrWu3qGye-8i7lfW4tscEDMvw"
   },
   "challenge": "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
-  "pubKeyCredParams": [{alg: -7, type: "public-key"}]
+  "pubKeyCredParams": [{alg: -7, type: "public-key"}],
+  "timeout": 60000
 }
+```
+
+--
+
+### Frontend
+
+```js[2-13|16-18]
+const publicKeyCredentialCreationOptions = {
+    challenge: "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
+    rp: {
+        name: "iO",
+        id: "iodigital.com",
+    },
+    user: {
+      "name": "mark",
+      "displayName": "Mark van der Linden",
+      "id": "Ve_TC1ROGx8gxgqIXg4QK_HdNgYA1DueCk76aJQeOGn1Ig3Q9NNQJSlmN54xabrWu3qGye-8i7lfW4tscEDMvw"
+    },
+    pubKeyCredParams: [{alg: -7, type: "public-key"}],
+    timeout: 60000
+};
+
+const publicKeyCredentialJson = await navigator.credentials.create({
+    publicKey: publicKeyCredentialCreationOptions
+});
 ```
 
 --
 
 ### Backend (4)
 
-```java[1-3|5-9|11]
+```java[1|2-3|5-9|7|8|11]
 String publicKeyCredentialJson = /* ... */; 
 PublicKeyCredential pkc = PublicKeyCredential
   .parseRegistrationResponseJson(publicKeyCredentialJson);
@@ -544,7 +532,6 @@ RegistrationResult result = rp.finishRegistration(
     .build());
 
 ByteArray publicKey = result.getPublicKeyCose();
-PublicKeyCredentialDescriptor keyId = result.getKeyId();
 ```
 
 --
@@ -552,27 +539,6 @@ PublicKeyCredentialDescriptor keyId = result.getKeyId();
 ### Authentication
 
 ![authentication](/assets/authentication.svg)<!-- .element: class="" -->
-
---
-
-### Frontend
-
-```js[1-3|6|7|8-12|13]
-const credential = await navigator.credentials.get({
-    publicKey: publicKeyCredentialRequestOptions
-});
-
-const publicKeyCredentialRequestOptions = {
-    challenge: "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
-    rpId: "iodigital.com",
-    allowCredentials: [{
-        id: ******,
-        type: 'public-key',
-        transports: ['usb', 'ble', 'nfc'],
-    }],
-    timeout: 60000
-}
-```
 
 --
 
@@ -591,23 +557,45 @@ return request.toCredentialsGetJson();
 
 ### Backend (2)
 
-```json[2|3|4-8]
+```json[2|3|4-8|9]
 {
   "challenge": "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
   "rpId": "iodigital.com",
   "allowCredentials": [{
-    transports: "usb",
-    type: "public-key",
-    id: "******"
-  }]
+    "transports": "usb",
+    "type": "public-key",
+    "id": "******"
+  }],
+  "timeout": 60000
 }
+```
+
+--
+
+### Frontend
+
+```js[2-10|12-14]
+const publicKeyCredentialRequestOptions = {
+    challenge: "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
+    rpId: "iodigital.com",
+    allowCredentials: [{
+      transports: "usb",
+      type: "public-key",
+      id: "******"
+    }],
+    timeout: 60000
+}
+
+const credential = await navigator.credentials.get({
+    publicKey: publicKeyCredentialRequestOptions
+});
 ```
 
 --
 
 ## Backend (3)
 
-```java[1-3|5-9|11-12]
+```java[1|2-3|5-9|11-12]
 String publicKeyCredentialJson = /* ... */;
 PublicKeyCredential pkc = PublicKeyCredential
   .parseAssertionResponseJson(publicKeyCredentialJson);
@@ -624,36 +612,71 @@ String username = result.getUsername();
 
 ---
 
-## But what if I lose my authenticator?
+### Laptop as authenticator
+
+<img src="assets/laptop.svg" alt="laptop" style="width:250px;"/>
+<!-- .element: class="svg-white" -->
 
 --
 
-## Pass keys
-#### Multi-device FIDO credentials
+[comment]: <> (Setup in Keycloak)
 
-[comment]: <> (image explaining keys sync with google/apple account)
+<iframe style="width:100%; height:500px;" data-src="auth/admin/master/console/" data-preload></iframe>
+<io-webcam-view style="display: inline-block; width: 400px;" width="720" height="400">
+  webcam view
+</io-webcam-view>
+
+--
+
+### Phone as authenticator
+
+<img src="assets/laptop-mobile.svg" alt="laptop-mobile" style="width:250px;"/>
+<!-- .element: class="svg-white" -->
+--
+
+[comment]: <> (Registration and authentication via laptop)
+
+<iframe style="width:100%; height:400px;" data-src="auth/realms/master/account/" data-preload></iframe>
+<io-webcam-view style="display: inline-block; width: 400px;" width="720" height="400">
+  webcam view
+</io-webcam-view>
+
+--
+
+### Phone as authenticator
+
+<img src="assets/mobile.svg" alt="mobile" style="width:250px;"/>
+<!-- .element: class="svg-white" -->
+
+--
+
+[comment]: <> (authentication via phone)
+
+<io-webcam-view style="display: inline-block;" width="720" height="400">
+  webcam view
+</io-webcam-view>
 
 ---
 
-## What did we achieve?
+## What now?
 
 --
 
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
-✅ Can't forget your passwords
+Reduce reliance on passwords!
 
 --
 
 ![developer](/assets/developer.svg)
 <!-- .element: class="svg-white" -->
-✅ Easy implementation
+Enable Web Authentication!
 
 --
 
 ![malicious-party](/assets/malicious_party.svg)
 <!-- .element: class="svg-white" -->
-✅ Can only steal your public key
+Steal those public keys!
 
 [comment]: <> (combine these into single slide)
 

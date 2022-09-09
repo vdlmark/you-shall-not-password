@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./etc/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./dist:/data/www
+      - ./data:/data/www
       - ./etc/letsencrypt/:/etc/letsencrypt/
     ports:
       - 80:80
@@ -22,3 +22,5 @@ services:
       - KEYCLOAK_ADMIN_PASSWORD=admin
       - KC_PROXY=edge
       - KC_HTTP_RELATIVE_PATH=/auth
+    volumes:
+      - .local/keycloak/:/opt/keycloak/data/h2/
