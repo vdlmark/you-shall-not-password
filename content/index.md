@@ -1,4 +1,8 @@
-# You shall not password! 🧙
+<!-- .slide: data-background-image="/assets/you_shall_not.webp" -->
+
+--
+
+<!-- .slide: data-background-image="/assets/you_shall_not_password.webp" -->
 
 ---
 
@@ -79,6 +83,10 @@
 
 ---
 
+![correct-horse-battery-staple](/assets/correct-horse-battery-staple.png)
+
+--
+
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
 
@@ -89,10 +97,6 @@
 
 ![website](/assets/website.svg)
 <!-- .element: class="svg-white" -->
-
---
-
-![correct-horse-battery-staple](/assets/correct-horse-battery-staple.png)
 
 --
 
@@ -282,11 +286,8 @@ Developer Advocate @ _iO_</br>
 
 ## Passwordless
 
-[comment]: <> (We should maybe cut this one out)
-
-![magic-link](/assets/magic-link.svg)
-![push-notification](/assets/push-notification.svg)
-<!-- .element: class="svg-white" -->
+![magic-link](/assets/magic-link.svg)<!-- .element: class="svg-white svg-35" -->
+![push-notification](/assets/push-notification.svg)<!-- .element: class="svg-white svg-35" style="margin-left: 2em" -->
 
 --
 
@@ -398,25 +399,22 @@ Developer Advocate @ _iO_</br>
 
 <img src="assets/webauthentication.svg" alt="webauthentication" style="width:250px;"/>
 
-><img src="assets/standerdization.svg" alt="standerdization" style="width:80px;"/>
-  <br />Standard
-<!-- .element: class="fragment fade-in svg-white" -->
+> <div><img src="assets/standerdization.svg">Standard</div><!-- .element: class="svg-white svg-flex" -->
 
-><img src="assets/key-pair.svg" alt="key-pair" style="width:125px;"/> 
-<br />Public Key Cryptography
-<!-- .element: class="fragment fade-in svg-white" -->
+> <div><img src="assets/key-pair.svg">Public Key Cryptography</div><!-- .element: class="svg-white svg-flex"-->
+<!-- .element: class="fragment fade-in" -->
 
 --
 
 Platform Authenticators
 
-![platform-authenticators](/assets/platform-authenticators.svg)
+![platform-authenticators](/assets/platform-authenticators.svg)<!-- .element: class="svg-white svg-35" -->
 
 --
 
 Roaming Authenticators
 
-![roaming-authenticators](/assets/roaming-authenticators.svg)
+![roaming-authenticators](/assets/roaming-authenticators.svg)<!-- .element: class="svg-white svg-35" -->
 
 ---
 
@@ -426,7 +424,7 @@ Roaming Authenticators
 
 #### Registration
 
-![registration](/assets/registration.svg)<!-- .element: class="" -->
+![registration](/assets/registration.webp)
 
 --
 
@@ -538,7 +536,7 @@ ByteArray publicKey = result.getPublicKeyCose();
 
 ### Authentication
 
-![authentication](/assets/authentication.svg)<!-- .element: class="" -->
+![authentication](/assets/authentication.webp)<!-- .element: style="max-width: 53%" -->
 
 --
 
@@ -632,6 +630,7 @@ String username = result.getUsername();
 
 <img src="assets/laptop-mobile.svg" alt="laptop-mobile" style="width:250px;"/>
 <!-- .element: class="svg-white" -->
+
 --
 
 [comment]: <> (Registration and authentication via laptop)
@@ -658,31 +657,23 @@ String username = result.getUsername();
 
 ---
 
-## What now?
+## So...
 
 --
 
-![user](/assets/user.svg)
-<!-- .element: class="svg-white" -->
-Reduce reliance on passwords!
+<div>
+  <img src="/assets/user.svg"> Reduce relience on passwords!
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
---
+<div>
+  <img src="/assets/developer.svg"> Enable Web Authentication!
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
-![developer](/assets/developer.svg)
-<!-- .element: class="svg-white" -->
-Enable Web Authentication!
+<div>
+  <img src="/assets/malicious_party.svg"> Steal those public keys!
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
---
-
-![malicious-party](/assets/malicious_party.svg)
-<!-- .element: class="svg-white" -->
-Steal those public keys!
-
-[comment]: <> (combine these into single slide)
-
+and<!-- .element: class="fragment"--> 
 ---
 
-## Thank you
-
-> Start forgetting those passwords
-<!-- .element: class="fragment fade-in" -->
+<!-- .slide: data-background-image="/assets/keep_your_secrets.webp" -->
