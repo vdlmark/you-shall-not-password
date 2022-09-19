@@ -164,7 +164,7 @@
 
 ---
 
-## Lucien Immink, B.eng
+## Lucien Immink
 
 --
 
@@ -176,6 +176,10 @@ Software Architect &</br>
 Developer Advocate @ _iO_</br>
 </br>
 Google Developer Expert
+
+---
+
+<!-- .slide: data-background-image="/assets/doors_of_durin.webp" -->
 
 ---
 
