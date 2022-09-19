@@ -89,6 +89,24 @@ $heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20p
 	.svg-white {
 		filter: brightness(0) invert(1);
 	}
+	.svg-35 {
+		width: 35%;
+	}
+	.svg-flex {
+		display: flex;
+		flex-direction: row;
+		gap: 1em;
+		align-items: center;
+		justify-content: center;
+		img {
+			width: 10%;
+		}
+		&.svg-flex-start {
+			justify-content: flex-start;
+			max-width: 80%;
+			margin: 0 auto;
+		}
+	}
 }
 // scrollbars on windows -----------------------
 .reveal .code-wrapper code {
