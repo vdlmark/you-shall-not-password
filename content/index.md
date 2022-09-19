@@ -202,43 +202,31 @@ Developer Advocate @ _iO_</br>
 
 --
 
-![user](/assets/user.svg)
-<!-- .element: class="svg-white" -->
-✅ Login with a single click
+<div>
+  <img src="/assets/user.svg"> Login with a single click
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
+
+<div>
+  <img src="/assets/developer.svg"> No complex security
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
+
+<div>
+  <img src="/assets/malicious_party.svg"> Deal with big tech security
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 --
 
-![developer](/assets/developer.svg)
-<!-- .element: class="svg-white" -->
-✅ No complex security
+<div>
+  <img src="/assets/user.svg"> Privacy implications
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
---
+<div>
+  <img src="/assets/developer.svg"> Deal with passwords
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
-![malicious-party](/assets/malicious_party.svg)
-<!-- .element: class="svg-white" -->
-✅ Deal with big tech security
-
-[comment]: <> (Combine these into one page)
-
---
-
-![user](/assets/user.svg)
-<!-- .element: class="svg-white" -->
-❌ Privacy implications
-
---
-
-![developer](/assets/developer.svg)
-<!-- .element: class="svg-white" -->
-❌ Relying on big tech companies
-
---
-
-![malicious-party](/assets/malicious_party.svg)
-<!-- .element: class="svg-white" -->
-❌ Can still steal your __password__
-
-[comment]: <> (Combine these into one page)
+<div>
+  <img src="/assets/malicious_party.svg"> Steals passwords
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 ---
 
@@ -248,43 +236,31 @@ Developer Advocate @ _iO_</br>
 
 --
 
-![user](/assets/user.svg)
-<!-- .element: class="svg-white" -->
-✅ Common practice
+<div>
+  <img src="/assets/user.svg"> Familiar
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
+
+<div>
+  <img src="/assets/developer.svg"> Easy to implement
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
+
+<div>
+  <img src="/assets/malicious_party.svg"> Needs to steal a second credential
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 --
 
-![developer](/assets/developer.svg)
-<!-- .element: class="svg-white" -->
-✅ Easy to implement
+<div>
+  <img src="/assets/user.svg"> Doesn't enable it
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
---
+<div>
+  <img src="/assets/developer.svg"> Still deal with passwords!
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
-![malicious-party](/assets/malicious_party.svg)
-<!-- .element: class="svg-white" -->
-✅ Need access to your authenticator
-
-[comment]: <> (Combine these into one page)
-
---
-
-![user](/assets/user.svg)
-<!-- .element: class="svg-white" -->
-❌ Not everyone enables it
-
---
-
-![developer](/assets/developer.svg)
-<!-- .element: class="svg-white" -->
-❌ Still have to deal with a __password__!
-
---
-
-![malicious-party](/assets/malicious_party.svg)
-<!-- .element: class="svg-white" -->
-❌ Phishing attack possible
-
-[comment]: <> (Combine these into one page)
+<div>
+  <img src="/assets/malicious_party.svg"> Phishing of password and code!
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 ---
 
@@ -295,45 +271,35 @@ Developer Advocate @ _iO_</br>
 
 --
 
-![user](/assets/user.svg)
-<!-- .element: class="svg-white" -->
-✅ Common practice
+<div>
+  <img src="/assets/user.svg"> Easy to use
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
+
+<div>
+  <img src="/assets/developer.svg"> No passwords to store
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
+
+<div>
+  <img src="/assets/malicious_party.svg"> No passwords to steal
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 --
 
-![developer](/assets/developer.svg)
-<!-- .element: class="svg-white" -->
-✅ No passwords to store
+<div>
+  <img src="/assets/user.svg"> Additional service or app needed
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
---
+<div>
+  <img src="/assets/developer.svg"> No standard way to implement
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
-![malicious-party](/assets/malicious_party.svg)
-<!-- .element: class="svg-white" -->
-✅ No passwords to steal
-
---
-
-![user](/assets/user.svg)
-<!-- .element: class="svg-white" -->
-❌ Additional service or app needed
-
---
-
-![developer](/assets/developer.svg)
-<!-- .element: class="svg-white" -->
-❌ No standard way to implement
-
---
-
-![malicious-party](/assets/malicious_party.svg)
-<!-- .element: class="svg-white" -->
-
-❌ Phishing attack still possible
+<div>
+  <img src="/assets/malicious_party.svg"> -
+</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 ---
 
 ### Two factor authentication
-#### Something you...
 
 <img src="assets/password.svg" alt="password" style="width:150px;"/>
 <!-- .element: class="svg-white fragment fade-in-then-semi-out" -->
@@ -341,8 +307,6 @@ Developer Advocate @ _iO_</br>
 <!-- .element: class="svg-white fragment fade-in" -->
 <img src="assets/fingerprint.svg" alt="fingerprint" style="width:150px;"/>
 <!-- .element: class="svg-white fragment fade-in" -->
-
-[comment]: <> (fade out password)
 
 ---
 
@@ -621,12 +585,7 @@ String username = result.getUsername();
 
 --
 
-[comment]: <> (Setup in Keycloak)
-
 <iframe style="width:100%; height:500px;" data-src="auth/admin/master/console/" data-preload></iframe>
-<io-webcam-view style="display: inline-block; width: 400px;" width="720" height="400">
-  webcam view
-</io-webcam-view>
 
 --
 
