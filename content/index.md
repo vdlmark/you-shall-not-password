@@ -585,7 +585,7 @@ String username = result.getUsername();
 
 --
 
-<iframe style="width:100%; height:500px;" data-src="auth/admin/master/console/" data-preload></iframe>
+<iframe style="width:100%; height:600px;" data-src="auth/admin/master/console/" data-preload></iframe>
 
 --
 
