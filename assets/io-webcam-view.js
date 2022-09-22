@@ -589,10 +589,7 @@ class nt extends b {
   }
   static get styles() {
     return ht`
-      video {
-        width: 100%;
-        height: 100%;
-      }
+      
     `;
   }
 }
