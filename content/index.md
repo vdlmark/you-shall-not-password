@@ -337,8 +337,6 @@ Developer Advocate @ _iO_</br>
 </div>
 <!-- .element: class="svg-white fragment fade-in-then-semi-out" -->
 
-[comment]: <> (Maybe have the logo's of google, microsoft etc. change into the respective browsers)
-
 --
 
 <div>
@@ -392,21 +390,9 @@ Roaming Authenticators
 
 --
 
-### Backend
+### Creation of the JSON object
 
-```xml
-<dependency>
-  <groupId>com.yubico</groupId>
-  <artifactId>webauthn-server-core</artifactId>
-  <version>2.0.0</version>
-</dependency>
-```
-
---
-
-### Backend (2)
-
-```java[1-4|6-9|11-17|18-23]
+```java[1-4|6-9|11-15|17-20|22-23|25]
 RelyingPartyIdentity rpIdentity = RelyingPartyIdentity.builder()
     .id("iodigital.com") 
     .name("iO Application")
@@ -417,24 +403,26 @@ RelyingParty rp = RelyingParty.builder()
     .credentialRepository(new MyCredentialRepository())
     .build();
 
-byte[] userHandle = new byte[64];
-random.nextBytes(userHandle);
 UserIdentity user = UserIdentity.builder()
   .name("mark")
   .displayName("Mark van der Linden")
-  .id(new ByteArray(userHandle))
+  .id("someRandomString")
   .build();
 
-PublicKeyCredentialCreationOptions request = 
-  rp.startRegistration(StartRegistrationOptions.builder()
+StartRegistrationOptions options = 
+  StartRegistrationOptions.builder()
     .user(user)
-    .build());
-return request.toCredentialsCreateJson();
+    .build();
+
+PublicKeyCredentialCreationOptions request = 
+  rp.startRegistration(options);
+
+return request.createJson();
 ```
 
 --
 
-### Backend (3)
+### JSON Object
 
 ```json[2-5|6-10|11|12|13]
 {
@@ -455,26 +443,13 @@ return request.toCredentialsCreateJson();
 
 --
 
-### Frontend
+### Invoke WebAuthn API
 
-```js[2-13|16-18]
-const publicKeyCredentialCreationOptions = {
-    challenge: "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
-    rp: {
-        name: "iO",
-        id: "iodigital.com",
-    },
-    user: {
-      "name": "mark",
-      "displayName": "Mark van der Linden",
-      "id": "Ve_TC1ROGx8gxgqIXg4QK_HdNgYA1DueCk76aJQeOGn1Ig3Q9NNQJSlmN54xabrWu3qGye-8i7lfW4tscEDMvw"
-    },
-    pubKeyCredParams: [{alg: -7, type: "public-key"}],
-    timeout: 60000
-};
+```js[1|3-5]
+const optionsFromBackend = await callToBackend();
 
-const publicKeyCredentialJson = await navigator.credentials.create({
-    publicKey: publicKeyCredentialCreationOptions
+const webhAuthnJsonObject = await navigator.credentials.create({
+    publicKey: optionsFromBackend
 });
 ```
 
@@ -483,9 +458,9 @@ const publicKeyCredentialJson = await navigator.credentials.create({
 ### Backend (4)
 
 ```java[1|2-3|5-9|7|8|11]
-String publicKeyCredentialJson = /* ... */; 
+String webhAuthnJsonObject = /* ... */; 
 PublicKeyCredential pkc = PublicKeyCredential
-  .parseRegistrationResponseJson(publicKeyCredentialJson);
+  .parseRegistrationResponseJson(webhAuthnJsonObject);
 
 RegistrationResult result = rp.finishRegistration(
   FinishRegistrationOptions.builder()
