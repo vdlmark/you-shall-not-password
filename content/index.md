@@ -568,6 +568,7 @@ String username = result.getUsername();
 
 --
 
+<!--<video data-autoplay muted src="assets/laptop-as-authenticator.mp4"></video>-->
 <iframe style="width:100%; height:600px;" data-src="auth/admin/master/console/" data-preload></iframe>
 
 --
