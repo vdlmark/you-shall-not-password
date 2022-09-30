@@ -580,13 +580,8 @@ String username = result.getUsername();
 --
 
 [comment]: <> (Registration and authentication via laptop)
+<video data-autoplay muted src="assets/phone-as-authenticator.mp4"></video>
 
-<iframe style="width:78%; height:100%; position: absolute; left: 22%;" data-src="auth/realms/master/account/" data-preload></iframe>
-<div style="overflow: hidden; width: 20%;">
-<io-webcam-view width="720" height="400">
-  webcam view
-</io-webcam-view>
-</div>
 --
 
 ### Phone as authenticator
@@ -600,9 +595,7 @@ String username = result.getUsername();
 
 [comment]: <> (authentication via phone)
 
-<io-webcam-view style="display: inline-block;" width="720" height="400">
-  webcam view
-</io-webcam-view>
+<video height="600px" data-autoplay muted src="assets/phone-as-authenticator2.mp4"></video>
 
 ---
 
