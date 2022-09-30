@@ -5,6 +5,7 @@
 <!-- .slide: data-background-image="/assets/you_shall_not_password.webp" -->
 
 ---
+<!-- .slide: data-theme="rouge" -->
 
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
@@ -166,7 +167,11 @@
 
 ## Lucien Immink
 
+<!-- .slide: data-theme="rouge" -->
+
 --
+
+<!-- .slide: data-theme="rouge" -->
 
 ![lucien-immink](/assets/lucien-immink.webp)<!-- .element: class="circle" style="max-height: 20vh" -->
 
@@ -182,7 +187,8 @@ Google Developer Expert
 ---
 
 ## Mark van der Linden
- 
+<!-- .slide: data-theme="blue" -->
+
 --
 
 ![mark-van-der-linden](/assets/mark-van-der-linden.jpg)<!-- .element: class="circle" style="max-height: 20vh" -->
@@ -549,7 +555,9 @@ String username = result.getUsername();
 
 ---
 
-## Out of the box solutions 
+## Out of the box solutions
+
+<!-- .slide: data-theme="blue" -->
 
 --
 
@@ -588,6 +596,8 @@ String username = result.getUsername();
 
 --
 
+<!-- .slide: data-theme="blue" -->
+
 [comment]: <> (authentication via phone)
 
 <io-webcam-view style="display: inline-block;" width="720" height="400">
@@ -597,6 +607,7 @@ String username = result.getUsername();
 ---
 
 ## So...
+<!-- .slide: data-theme="orange" -->
 
 --
 
