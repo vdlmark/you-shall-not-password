@@ -203,7 +203,7 @@ Developer Advocate @ _iO_</br>
 </div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 <div>
-  <img src="/assets/developer.svg"> No complex security
+  <img src="/assets/developer.svg"> Implement by standards
 </div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 <div>
@@ -221,7 +221,7 @@ Developer Advocate @ _iO_</br>
 </div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 <div>
-  <img src="/assets/malicious_party.svg"> Steals passwords
+  <img src="/assets/malicious_party.svg"> One password to rule them all
 </div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 ---
@@ -233,11 +233,11 @@ Developer Advocate @ _iO_</br>
 --
 
 <div>
-  <img src="/assets/user.svg"> Familiar
+  <img src="/assets/user.svg"> Getting used to it
 </div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 <div>
-  <img src="/assets/developer.svg"> Easy to implement
+  <img src="/assets/developer.svg"> Easy implementation
 </div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 <div>
@@ -255,7 +255,7 @@ Developer Advocate @ _iO_</br>
 </div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 <div>
-  <img src="/assets/malicious_party.svg"> Phishing of password and code!
+  <img src="/assets/malicious_party.svg"> Phishing of OTP
 </div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
 
 ---
@@ -348,6 +348,20 @@ Developer Advocate @ _iO_</br>
 
 </div>
 
+--
+
+### Standard
+
+![standerdization](/assets/standerdization.svg)<!-- .element: class="svg-white svg-25" -->
+
+--
+
+Public Key Cryptography
+
+![key-pair](/assets/key-pair.svg)<!-- .element: class="svg-white svg-25" -->
+
+--
+
 <div>
 
 <img src="assets/ctap.png" alt="ctap" style="width:250px;"/>
@@ -356,15 +370,6 @@ Developer Advocate @ _iO_</br>
 ##### Client to authenticator Protocol (CTAP)
 
 </div>
-
---
-
-<img src="assets/webauthentication.svg" alt="webauthentication" style="width:250px;"/>
-
-> <div><img src="assets/standerdization.svg">Standard</div><!-- .element: class="svg-white svg-flex" -->
-
-> <div><img src="assets/key-pair.svg">Public Key Cryptography</div><!-- .element: class="svg-white svg-flex"-->
-<!-- .element: class="fragment fade-in" -->
 
 --
 
@@ -390,7 +395,7 @@ Roaming Authenticators
 
 --
 
-### Creation of the JSON object
+#### Creation of the JSON object (backend)
 
 ```java[1-4|6-9|11-15|17-20|22-23|25]
 RelyingPartyIdentity rpIdentity = RelyingPartyIdentity.builder()
@@ -443,19 +448,21 @@ return request.createJson();
 
 --
 
-### Invoke WebAuthn API
+#### Invoke WebAuthn API (frontend)
 
-```js[1|3-5]
-const optionsFromBackend = await callToBackend();
+```js[1|3-5|7]
+const optionsFromBackend = await callToBackend("mark");
 
 const webhAuthnJsonObject = await navigator.credentials.create({
     publicKey: optionsFromBackend
 });
+
+const result = await anotherCallToBackend(webhAuthnJsonObject);
 ```
 
 --
 
-### Backend (4)
+#### Validate response (backend)
 
 ```java[1|2-3|5-9|7|8|11]
 String webhAuthnJsonObject = /* ... */; 
@@ -468,7 +475,7 @@ RegistrationResult result = rp.finishRegistration(
     .response(pkc)
     .build());
 
-ByteArray publicKey = result.getPublicKeyCose();
+ByteArray publicKey = result.getPublicKey();
 ```
 
 --
@@ -479,7 +486,7 @@ ByteArray publicKey = result.getPublicKeyCose();
 
 --
 
-## Backend
+#### Creation of the JSON object (backend)
 
 ```java[1-4|6]
 AssertionRequest request = rp.startAssertion(
@@ -487,12 +494,12 @@ AssertionRequest request = rp.startAssertion(
     .username("mark")
     .build());
 
-return request.toCredentialsGetJson();
+return request.createJson();
 ```
 
 --
 
-### Backend (2)
+### JSON object
 
 ```json[2|3|4-8|9]
 {
@@ -509,28 +516,21 @@ return request.toCredentialsGetJson();
 
 --
 
-### Frontend
+#### Invoke WebAuthn API (frontend)
 
-```js[2-10|12-14]
-const publicKeyCredentialRequestOptions = {
-    challenge: "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
-    rpId: "iodigital.com",
-    allowCredentials: [{
-      transports: "usb",
-      type: "public-key",
-      id: "******"
-    }],
-    timeout: 60000
-}
+```js[1|3-5|7]
+const optionsFromBackend = await callToBackend("mark");
 
 const credential = await navigator.credentials.get({
-    publicKey: publicKeyCredentialRequestOptions
+    publicKey: optionsFromBackend
 });
+
+const result = await anotherCallToBackend(credential);
 ```
 
 --
 
-## Backend (3)
+#### Validate response (backend)
 
 ```java[1|2-3|5-9|11-12]
 String publicKeyCredentialJson = /* ... */;
@@ -548,6 +548,10 @@ String username = result.getUsername();
 ```
 
 ---
+
+## Out of the box solutions 
+
+--
 
 ### Laptop as authenticator
 
