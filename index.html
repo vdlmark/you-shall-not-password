@@ -39,6 +39,14 @@
 			  history: true,
 			  plugins: [ Markdown, Highlight, Notes, Editor ]
 			});
+
+			Reveal.on('slidechanged', event => {
+				const slide = event.currentSlide;
+				const newTheme = slide?.dataset?.theme;
+				if (newTheme) {
+					document.querySelector('html').dataset.theme = newTheme;
+				}
+			});
 		</script>
 		<script type="module" src="./assets/io-webcam-view.js"></script>
 		
