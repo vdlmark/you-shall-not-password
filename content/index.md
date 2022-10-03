@@ -45,19 +45,6 @@
 <!-- .element: class="svg-white" -->
 ---
 
-![user](/assets/user.svg)
-<!-- .element: class="svg-white" -->
-
-> Welcome123 ♻️
-
-<img src="assets/arrow-down.svg" alt="arrow-down"/>
-<!-- .element: style="width:50px" class="svg-white" -->
-
-![website](/assets/website.svg)
-<!-- .element: class="svg-white" -->
-
---
-
 ![developer](/assets/developer.svg)
 <!-- .element: class="svg-white" -->
 
@@ -67,6 +54,19 @@
 <!-- .element: style="width:50px" class="svg-white" -->
 
 ![encrypted-database](/assets/encrypted-database.svg)
+<!-- .element: class="svg-white" -->
+
+--
+
+![user](/assets/user.svg)
+<!-- .element: class="svg-white" -->
+
+> Welcome123 ♻️
+
+<img src="assets/arrow-down.svg" alt="arrow-down"/>
+<!-- .element: style="width:50px" class="svg-white" -->
+
+![website](/assets/website.svg)
 <!-- .element: class="svg-white" -->
 
 --
