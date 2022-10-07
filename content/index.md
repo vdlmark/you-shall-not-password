@@ -268,36 +268,8 @@ Developer Advocate @ _iO_</br>
 
 ## Passwordless
 
-![magic-link](/assets/magic-link.svg)<!-- .element: class="svg-white svg-35" -->
-![push-notification](/assets/push-notification.svg)<!-- .element: class="svg-white svg-35" style="margin-left: 2em" -->
-
---
-
-<div>
-  <img src="/assets/user.svg"> Easy to use
-</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
-
-<div>
-  <img src="/assets/developer.svg"> No passwords to store
-</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
-
-<div>
-  <img src="/assets/malicious_party.svg"> No passwords to steal
-</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
-
---
-
-<div>
-  <img src="/assets/user.svg"> Additional service or app needed
-</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
-
-<div>
-  <img src="/assets/developer.svg"> No standard way to implement
-</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
-
-<div>
-  <img src="/assets/malicious_party.svg"> -
-</div><!-- .element: class="svg-flex svg-flex-start svg-white"-->
+![magic-link](/assets/magic-link.svg)<!-- .element: class="svg-white svg-25 fragment fade-in" -->
+![push-notification](/assets/push-notification.svg)<!-- .element: class="svg-white svg-25 fragment fade-in" style="margin-left: 2em" -->
 
 ---
 
@@ -621,3 +593,35 @@ and<!-- .element: class="fragment"-->
 ---
 
 <!-- .slide: data-background-image="/assets/keep_your_secrets.webp" -->
+
+--
+
+### Want to know more?
+
+<span>💡 [webauthn.io](https://webauthn.io) </span> <br />
+<span>⚙️ [webauthn.guide](https://webauthn.guide) </span> <br />
+
+--
+
+## Thank you
+
+Contact us:
+
+![iO logo](/assets/io.svg)<!-- .element: class="icon icon-inline" --> [iodigital.com](https://www.iodigital.com) <br />
+
+<div>
+<div style="float: left;">
+
+  ![mark-van-der-linden](/assets/mark-van-der-linden.jpg)<!-- .element: class="circle" style="max-height: 10vh" --></br>
+  ###### 📧 mark.vanderlinden@iodigital.com
+  ###### 🏢 [linkedin.com/in/markvdl](https://www.linkedin.com/in/markvdl/) <br />
+
+</div>
+<div style="float: right">
+
+  ![lucien-immink](/assets/lucien-immink.webp)<!-- .element: class="circle" style="max-height: 10vh" --></br>
+  ###### 📧 lucien.immink@iodigital.com <br /> 
+  ###### 🦜 [twitter.com/lucienimmink](https://twitter.com/lucienimmink) <br />
+  ###### 🏢 [linkedin.com/in/lucien-immink](https://www.linkedin.com/in/lucien-immink/) 
+</div>
+</div>
