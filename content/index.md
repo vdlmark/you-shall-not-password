@@ -91,7 +91,7 @@
 ![user](/assets/user.svg)
 <!-- .element: class="svg-white" -->
 
-> Correct Horse Battery Staple
+> Battery Correct Horse Staple
 
 <img src="assets/arrow-down.svg" alt="arrow-down" />
 <!-- .element: style="width:50px" class="svg-white" -->
@@ -533,18 +533,15 @@ String username = result.getUsername();
 
 --
 
-### Phone as authenticator
+### Laptop as authenticator
 
-<img src="assets/mobile.svg" alt="mobile" style="width:250px;"/>
+<img src="assets/laptop.svg" alt="laptop" style="width:250px;"/>
 <!-- .element: class="svg-white" -->
 
 --
 
-<!-- .slide: data-theme="blue" -->
-
-[comment]: <> (authentication via phone)
-
-<video height="600px" data-autoplay muted src="assets/phone-as-authenticator2.mp4"></video>
+<video data-autoplay muted src="assets/laptop-as-authenticator.mp4"></video>
+<!--<iframe style="width:100%; height:600px;" data-src="auth/admin/master/console/" data-preload></iframe>-->
 
 --
 
@@ -560,15 +557,18 @@ String username = result.getUsername();
 
 --
 
-### Laptop as authenticator
+### Phone as authenticator
 
-<img src="assets/laptop.svg" alt="laptop" style="width:250px;"/>
+<img src="assets/mobile.svg" alt="mobile" style="width:250px;"/>
 <!-- .element: class="svg-white" -->
 
 --
 
-<!--<video data-autoplay muted src="assets/laptop-as-authenticator.mp4"></video>-->
-<iframe style="width:100%; height:600px;" data-src="auth/admin/master/console/" data-preload></iframe>
+<!-- .slide: data-theme="blue" -->
+
+[comment]: <> (authentication via phone)
+
+<video height="600px" data-autoplay muted src="assets/phone-as-authenticator2.mp4"></video>
 
 ---
 
