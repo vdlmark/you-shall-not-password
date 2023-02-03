@@ -165,23 +165,6 @@
 
 ---
 
-## Lucien Immink
-
-<!-- .slide: data-theme="rouge" -->
-
---
-
-<!-- .slide: data-theme="rouge" -->
-
-![lucien-immink](/assets/lucien-immink.webp)<!-- .element: class="circle" style="max-height: 20vh" -->
-
-Software Architect &</br>
-Developer Advocate @ _iO_</br>
-</br>
-Google Developer Expert
-
----
-
 <!-- .slide: data-background-image="/assets/doors_of_durin.webp" -->
 
 ---
@@ -610,18 +593,25 @@ Contact us:
 ![iO logo](/assets/io.svg)<!-- .element: class="icon icon-inline" --> [iodigital.com](https://www.iodigital.com) <br />
 
 <div>
-<div style="float: left;">
 
   ![mark-van-der-linden](/assets/mark-van-der-linden.jpg)<!-- .element: class="circle" style="max-height: 10vh" --></br>
   ###### 📧 mark.vanderlinden@iodigital.com
   ###### 🏢 [linkedin.com/in/markvdl](https://www.linkedin.com/in/markvdl/) <br />
 
 </div>
-<div style="float: right">
 
-  ![lucien-immink](/assets/lucien-immink.webp)<!-- .element: class="circle" style="max-height: 10vh" --></br>
-  ###### 📧 lucien.immink@iodigital.com <br /> 
-  ###### 🦜 [twitter.com/lucienimmink](https://twitter.com/lucienimmink) <br />
-  ###### 🏢 [linkedin.com/in/lucien-immink](https://www.linkedin.com/in/lucien-immink/) 
-</div>
-</div>
+--
+
+<img src="assets/cow-spring-23.jpg" alt="cow"/>
+
+--
+
+## Register at [covenofwisdom.io](https://covenofwisdom.io)  <br />
+
+##### Thursday 23rd of March, 16h00 - 20h00 CET
+##### iO Campus Eindhoven, Marconilaan 16, Eindhoven <br /><br />
+
+- ##### Registrations are limited to 50 people.
+- ##### Bring Your Own Laptop.
+- ##### Free food and drinks are provided.
+- ##### This event will unfortunately not be streamed online.
