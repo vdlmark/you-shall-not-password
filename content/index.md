@@ -1,91 +1,35 @@
-![nn](/assets/nn.svg)<!-- .element: class="svg-25" -->
+<!-- .slide: data-background-image="/assets/you_shall_not.webp" -->
 
 --
 
-> What is Single Sign On?
-
---
-
-> What problems does it solve?
-
---
-
-<div>
-  <img src="/assets/password.svg"> Single password
-</div><!-- .element: class="svg-flex svg-flex-start svg-white fragment fade-in-then-semi-out"-->
-
-<div>
-  <img src="/assets/database.svg"> Centralize identification storage
-</div><!-- .element: class="svg-flex svg-flex-start svg-white fragment fade-in-then-semi-out"-->
-
-<div>
-  <img src="/assets/compliance.svg"> Simplified Compliancy
-</div><!-- .element: class="svg-flex svg-flex-start svg-white fragment fade-in-then-semi-out"-->
-
-<div>
-  <img src="/assets/search.png"> Improves auditing capabilities
-</div><!-- .element: class="svg-flex svg-flex-start svg-white fragment fade-in-then-semi-out"-->
-
---
-
-![oauth](/assets/oauth.webp)<!-- .element: class="svg-15" -->
-![open-id](/assets/openid-connect.webp)<!-- .element: class="svg-15" style="margin-left: 2em; margin-bottom: 1em" -->
-![web-authentication](/assets/webauthentication.svg)<!-- .element: class="svg-15" style="margin-left: 2em" -->
-
-> Build on standards!
+<!-- .slide: data-background-image="/assets/you_shall_not_password.webp" -->
 
 ---
+<!-- .slide: data-theme="rouge" -->
 
-## Mark van der Linden
-<!-- .slide: data-theme="blue" -->
+![user](/assets/user.svg)
+<!-- .element: class="svg-white" -->
 
---
-![mark-van-der-linden](/assets/mark-van-der-linden.png)<!-- .element: class="circle" style="max-height: 20vh" -->
+> Welcome123
 
-Software Architect &</br>
-Developer Advocate @ _iO_</br>
+<img src="assets/arrow-down.svg" alt="arrow-down"/>
+<!-- .element: style="width:50px" class="svg-white" -->
 
---
-<!-- .slide: data-theme="orange" -->
-![mark-van-der-linden](/assets/mark-van-der-linden.png)<!-- .element: class="circle" style="max-height: 20vh" -->
-
-Multichannel Retail </br>
-Software Architect @ _NNiB_</br>
-
----
-
-![saml](/assets/saml-logo.webp)
-<!-- .element: class="svg-white"-->
-
-<div>
-  <img src="/assets/database.svg"> Framework providing authentication
-</div><!-- .element: class="svg-flex svg-flex-start svg-white fragment fade-in-then-semi-out"-->
-
-<div>
-  <img src="/assets/password.svg"> Credentials not shared
-</div><!-- .element: class="svg-flex svg-flex-start svg-white fragment fade-in-then-semi-out"-->
-
-<div>
-  <img src="/assets/compliance.svg"> Legacy
-</div><!-- .element: class="svg-flex svg-flex-start svg-white fragment fade-in-then-semi-out"-->
+![website](/assets/website.svg)
+<!-- .element: class="svg-white" -->
 
 --
 
-![oauth](/assets/oauth.webp)
-<!-- .element: class="svg-white"-->
+![developer](/assets/developer.svg)
+<!-- .element: class="svg-white" -->
 
-<div>
-  <img src="/assets/database.svg"> Framework for providing access to protected resources
-</div><!-- .element: class="svg-flex svg-flex-start svg-white fragment fade-in-then-semi-out"-->
+> Welcome123
 
-<div>
-  <img src="/assets/password.svg"> Credentials not shared
-</div><!-- .element: class="svg-flex svg-flex-start svg-white fragment fade-in-then-semi-out"-->
+<img src="assets/arrow-down.svg" alt="arrow-down"/>
+<!-- .element: style="width:50px" class="svg-white" -->
 
-<div>
-  <img src="/assets/compliance.svg"> Stateless via use of JSON Web Tokens
-</div><!-- .element: class="svg-flex svg-flex-start svg-white fragment fade-in-then-semi-out"-->
-
+![database](/assets/database.svg)
+<!-- .element: class="svg-white" -->
 
 --
 
