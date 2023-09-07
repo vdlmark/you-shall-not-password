@@ -563,6 +563,22 @@ app.post('/login/finish', async (req, res) => {
 
 ---
 
+### What if I lose my phone?
+<!-- .element: class="svg-white fragment fade-in" -->
+
+--
+
+### Passkeys
+![roaming-authenticators](/assets/keykey.png)<!-- .element: class="svg-white svg-35" -->
+
+--
+
+- Synchronize keys between devices  
+- Google, Microsoft or Apple account
+- Bitwarden and 1Password
+
+---
+
 ## So...
 <!-- .slide: data-theme="orange" -->
 
