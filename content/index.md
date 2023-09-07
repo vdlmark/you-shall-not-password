@@ -358,32 +358,24 @@ Roaming Authenticators
 
 #### Creation of the JSON object (backend)
 
-```java[1-4|6-9|11-15|17-20|22-23|25]
-RelyingPartyIdentity rpIdentity = RelyingPartyIdentity.builder()
-    .id("iodigital.com") 
-    .name("iO Application")
-    .build();
+```javascript[1|2-3|4|7|8|9|10-12|13|16]
+app.post('/register/start', (req, res) => {
+  const username = req.body.username;
+  const challenge = getNewChallenge();
+  challenges[username] = challenge;
 
-RelyingParty rp = RelyingParty.builder()
-    .identity(rpIdentity)
-    .credentialRepository(new MyCredentialRepository())
-    .build();
+  const request = {
+    challenge: challenge,
+    rp: { id: 'iodigital.com', name: 'iO Application' },
+    user: { id: username, name: username, displayName: username },
+    pubKeyCredParams: [
+      { type: 'public-key', alg: -7 }
+    ],
+    timeout: 60000
+  };
 
-UserIdentity user = UserIdentity.builder()
-  .name("mark")
-  .displayName("Mark van der Linden")
-  .id("someRandomString")
-  .build();
-
-StartRegistrationOptions options = 
-  StartRegistrationOptions.builder()
-    .user(user)
-    .build();
-
-PublicKeyCredentialCreationOptions request = 
-  rp.startRegistration(options);
-
-return request.createJson();
+  res.json(request);
+});
 ```
 
 --
@@ -398,8 +390,8 @@ return request.createJson();
   },
   "user": {
     "name": "mark",
-    "displayName": "Mark van der Linden",
-    "id": "Ve_TC1ROGx8gxgqIXg4QK_HdNgYA1DueCk76aJQeOGn1Ig3Q9NNQJSlmN54xabrWu3qGye-8i7lfW4tscEDMvw"
+    "displayName": "mark",
+    "id": "mark"
   },
   "challenge": "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
   "pubKeyCredParams": [{alg: -7, type: "public-key"}],
@@ -425,18 +417,20 @@ const result = await anotherCallToBackend(webhAuthnJsonObject);
 
 #### Validate response (backend)
 
-```java[1|2-3|5-9|7|8|11]
-String webhAuthnJsonObject = /* ... */; 
-PublicKeyCredential pkc = PublicKeyCredential
-  .parseRegistrationResponseJson(webhAuthnJsonObject);
+```javascript[1|2-6|8|9|10|12]
+app.post('/register/finish', async (req, res) => {  
+  const verification = await SimpleWebAuthnServer.verifyRegistrationResponse({
+    response: req.body.data,
+    expectedChallenge: challenges[username],
+    expectedOrigin: "iodigital.com"
+  });
 
-RegistrationResult result = rp.finishRegistration(
-  FinishRegistrationOptions.builder()
-    .request(request)
-    .response(pkc)
-    .build());
+  const { verified, registrationInfo } = verification;
+  const { credentialID, credentialPublicKey } = registrationInfo;
+  users[username] = registrationInfo;
 
-ByteArray publicKey = result.getPublicKey();
+  return res.status(200).send(true);
+});
 ```
 
 --
@@ -449,13 +443,25 @@ ByteArray publicKey = result.getPublicKey();
 
 #### Creation of the JSON object (backend)
 
-```java[1-4|6]
-AssertionRequest request = rp.startAssertion(
-  StartAssertionOptions.builder()
-    .username("mark")
-    .build());
+```javascript[1|2-4|7|8|9-13|14|17]
+app.post('/login/start', (req, res) => {
+  const username = req.body.username;
+  const challenge = getNewChallenge();
+  challenges[username] = challenge;
 
-return request.createJson();
+  const request = {
+    challenge,
+    rpId: "iodigital.com",
+    allowCredentials: [{
+      type: 'public-key',
+      id: users[username].credentialID,
+      transports: ['usb', 'ble', 'nfc']
+    }],
+    timeout: 60000
+  };
+
+  res.json(request);
+});
 ```
 
 --
@@ -467,9 +473,9 @@ return request.createJson();
   "challenge": "XAwA8V0uAKIw8E14qLZhpmPpzQHB8TawyCObc5ps_eo",
   "rpId": "iodigital.com",
   "allowCredentials": [{
-    "transports": "usb",
     "type": "public-key",
-    "id": "******"
+    "id": "******",
+    "transports": ["usb", "ble", "nfc"]
   }],
   "timeout": 60000
 }
@@ -493,19 +499,21 @@ const result = await anotherCallToBackend(credential);
 
 #### Validate response (backend)
 
-```java[1|2-3|5-9|11-12]
-String publicKeyCredentialJson = /* ... */;
-PublicKeyCredential pkc = PublicKeyCredential
-  .parseAssertionResponseJson(publicKeyCredentialJson);
+```javascript[1|2-3|5-10|12-13]
+app.post('/login/finish', async (req, res) => {
+  const username = req.body.username;
+  const user = users[username];
 
-AssertionResult result = rp.finishAssertion(
-  FinishAssertionOptions.builder()
-    .request(request)
-    .response(pkc)
-    .build());
+  verification = await SimpleWebAuthnServer.verifyAuthenticationResponse({
+    expectedChallenge: challenges[username],
+    response: req.body.data,
+    authenticator: user.credentialPublicKey,
+    expectedRPID: "iodigital.com" 
+  });
 
-boolean success = result.isSuccess();
-String username = result.getUsername();
+   const {verified} = verification;
+   return res.status(200).send(true);
+});
 ```
 
 ---
@@ -588,10 +596,6 @@ and<!-- .element: class="fragment"-->
 
 ## Thank you
 
-Contact us:
-
-![iO logo](/assets/io.svg)<!-- .element: class="icon icon-inline" --> [iodigital.com](https://www.iodigital.com) <br />
-
 <div>
 
   ![mark-van-der-linden](/assets/mark-van-der-linden.jpg)<!-- .element: class="circle" style="max-height: 10vh" --></br>
@@ -599,19 +603,3 @@ Contact us:
   ###### 🏢 [linkedin.com/in/markvdl](https://www.linkedin.com/in/markvdl/) <br />
 
 </div>
-
---
-
-<img src="assets/cow-spring-23.jpg" alt="cow"/>
-
---
-
-## Register at [covenofwisdom.io](https://covenofwisdom.io)  <br />
-
-##### Thursday 23rd of March, 16h00 - 20h00 CET
-##### iO Campus Eindhoven, Marconilaan 16, Eindhoven <br /><br />
-
-- ##### Registrations are limited to 50 people.
-- ##### Bring Your Own Laptop.
-- ##### Free food and drinks are provided.
-- ##### This event will unfortunately not be streamed online.
