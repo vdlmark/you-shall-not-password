@@ -177,7 +177,8 @@
 ![mark-van-der-linden](/assets/mark-van-der-linden.jpg)<!-- .element: class="circle" style="max-height: 20vh" -->
 
 Software Architect &</br>
-Developer Advocate @ _iO_</br>
+Developer Advocate </br>
+@ _iO_ _Eindhoven_
 
 ---
 
@@ -569,13 +570,24 @@ app.post('/login/finish', async (req, res) => {
 --
 
 ### Passkeys
-![roaming-authenticators](/assets/keykey.png)<!-- .element: class="svg-white svg-35" -->
+![Passkey](/assets/keykey.png)<!-- .element: class="svg-white svg-35" -->
 
 --
 
-- Synchronize keys between devices  
-- Google, Microsoft or Apple account
-- Bitwarden and 1Password
+![Passkey](/assets/cloud-computing.png)<!-- .element: class="svg-white svg-35" -->
+<div>
+  <img src="assets/microsoft.svg" alt="microsoft" style="width:80px;"/>
+  <img src="assets/google.svg" alt="google" style="width:80px;"/>
+  <img src="assets/apple.svg" alt="apple" style="width:80px;"/>
+</div>
+<!-- .element: class="svg-white fragment fade-in" -->
+
+--
+
+<img src="assets/1Password.png" alt="key" style="width:150px;"/>
+<!-- .element: class="svg fragment fade-in" -->
+<img src="assets/bitwarden.webp" alt="fingerprint" style="width:150px;"/>
+<!-- .element: class="svg fragment fade-in" -->
 
 ---
 
